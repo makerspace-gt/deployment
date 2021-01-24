@@ -4,6 +4,12 @@ You can use the [editor on GitHub](https://github.com/Igami/deployment/edit/gh-p
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+### Installation
+
+```bash
+curl -sSL https://raw.githubusercontent.com/Igami/deployment/main/deployment.sh | bash
+```
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
