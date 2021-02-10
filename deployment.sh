@@ -1,1 +1,3 @@
-hello world
+#!/bin/bash
+
+sudo apt -y install ansible
