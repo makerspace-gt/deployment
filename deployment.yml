@@ -1,3 +1,10 @@
 - hosts: localhost
+
   roles:
-     - greenleader.codium
+    # install VSCodium https://vscodium.com
+    # community-driven, freely-licensed binary distribution of Microsoft’s editor VSCode
+    # https://galaxy.ansible.com/green_leader/codium
+    - role: green_leader.codium
+      vars:
+        become: yes
+        ansible_os_family: Debian
