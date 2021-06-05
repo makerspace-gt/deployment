@@ -8,3 +8,5 @@
       vars:
         become: yes
         ansible_os_family: Debian
+    - darkwizard242.python3
+
