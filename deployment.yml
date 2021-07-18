@@ -1,14 +1,131 @@
 - hosts: localhost
+  become: yes
+
+  pre_tasks:
+
+    - name: Update && Dist-Upgrade the OS via apt
+      apt:
+        upgrade: dist
+        update_cache: yes
+        cache_valid_time: 86400 # 1 day
 
   roles:
-    # install VSCodium https://vscodium.com
-    # community-driven, freely-licensed binary distribution of Microsoft’s editor VSCode
-    # https://galaxy.ansible.com/green_leader/codium
-    - role: green_leader.codium
+    - role: ngetchell.vscode
       vars:
-        become: yes
-        ansible_os_family: Debian
-    - role: darkwizard242.python3
-      vars:
-        become: yes
+        vscode_extension:
+          - platformio.platformio-ide
+          - cweijan.vscode-office
+          - robole.marky-stats
+          - yzhang.markdown-all-in-one
+          - ms-vsliveshare.vsliveshare-pack
+          - mhutchie.git-graph
 
+  tasks:
+
+    ## CAD/CAM Programs ##
+
+    - name: Install Prusa Slicer from default apt repositorys
+      apt:
+        name: prusa-slicer
+
+    - name: Install FreeCAD from default apt repositorys
+      apt:
+        name: freecad
+
+    - name: Install Blender from default apt repositorys
+      apt:
+        name: blender
+
+    - name: Install OpenSCAD from default apt repositorys
+      apt:
+        name: openscad
+
+    - name: Install GIMP from default apt repositorys
+      apt:
+        name: gimp
+
+    - name: Install Inkscape from default apt repositorys
+      apt:
+        name: inkscape
+
+    - name: Install KiCad from default apt repositorys
+      apt:
+        name: kicad
+
+    ## Backup Programs ##
+
+    - name: Install Syncthing from default apt repositorys
+      apt:
+        name: syncthing
+
+    - name: Install KeePassXC from default apt repositorys
+      apt:
+        name: keepassxc
+
+    - name: Install Nextcloud Desktop from default apt repositorys
+      apt:
+        name: nextcloud-desktop
+
+    ## Writing Programs ##
+
+    - name: Install Pandoc from default apt repositorys
+      apt:
+        name:
+          - pandoc
+          - pandoc-citeproc
+
+    - name: Install TeX Live from default apt repositorys
+      apt:
+        name:
+          - texlive
+          - texlive-lang-german
+          - texlive-latex-extra
+          - texlive-fonts-extra
+          - texlive-luatex
+
+    ## Coding Programs ##
+
+    - name: Install Vagrant from default apt repositorys
+      apt:
+        name: 
+          - vagrant
+          - virtualbox
+
+    - name: Install Arduino IDE from default apt repositorys
+      apt:
+        name: arduino
+
+    - name: Install Android Tools from default apt repositorys
+      apt:
+        name:
+          - adb
+          - fastboot
+
+    ## Media Programs ##
+
+    - name: Install VLC media player from default apt repositorys
+      apt:
+        name: vlc
+
+    ## Gaming Programs ##
+
+    - name: Install Steam from default apt repositorys
+      apt:
+        name: steam
+
+
+    ## Communications Programs ##
+
+    - name: Install Telegram Desktop from default apt repositorys
+      apt:
+        name: telegram-desktop
+
+
+# common
+# user
+# deepnest
+# etcher
+# lightburn
+# veracrypt
+# element
+# signal

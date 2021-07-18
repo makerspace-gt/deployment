@@ -11,4 +11,4 @@ cd /tmp/deployment
 # deploy via ansbile
 # https://galaxy.ansible.com/docs/using/installing.html
 ansible-galaxy install -r requirements.yml
-ansible-playbook deployment.yml
+ansible-playbook -K deployment.yml
