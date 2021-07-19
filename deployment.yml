@@ -19,6 +19,9 @@
           - yzhang.markdown-all-in-one
           - ms-vsliveshare.vsliveshare-pack
           - mhutchie.git-graph
+    - role: staticdev.signal
+    - role: manala.zsh
+    - role: manala.ohmyzsh
 
   tasks:
 
@@ -141,6 +144,14 @@
       apt:
         name: telegram-desktop
 
+    - name: Install Slack Desktop from default apt repositorys
+      apt:
+        name: slack-desktop
+
+    - name: Install Discord from default apt repositorys
+      apt:
+        name: discord
+
     ## Learning Programs ##
 
     - name: Install Anki from default apt repositorys
@@ -177,12 +188,9 @@
 # lightburn
 # veracrypt
 # element
-# signal
 # zotero
 # typora
 # xournal++
-# ohmyzsh
-# discord
 # teams
 # zoom
 # cisco
