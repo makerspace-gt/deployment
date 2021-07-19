@@ -52,6 +52,10 @@
       apt:
         name: kicad
 
+    - name: Install Printrun from default apt repositorys
+      apt:
+        name: printrun
+
     ## Backup Programs ##
 
     - name: Install Syncthing from default apt repositorys
@@ -83,11 +87,15 @@
           - texlive-fonts-extra
           - texlive-luatex
 
+    - name: Install Calibre from default apt repositorys
+      apt:
+        name: calibre
+
     ## Coding Programs ##
 
     - name: Install Vagrant from default apt repositorys
       apt:
-        name: 
+        name:
           - vagrant
           - virtualbox
 
@@ -107,6 +115,19 @@
       apt:
         name: vlc
 
+    - name: Install Audacity from default apt repositorys
+      apt:
+        name: audacity
+
+    - name: Install Ardour from default apt repositorys
+      apt:
+        name: ardour
+
+    - name: Install OBS Studio from default apt repositorys
+      apt:
+        name: obs-studio
+        
+
     ## Gaming Programs ##
 
     - name: Install Steam from default apt repositorys
@@ -120,7 +141,35 @@
       apt:
         name: telegram-desktop
 
+    ## Learning Programs ##
 
+    - name: Install Anki from default apt repositorys
+      apt:
+        name: anki
+
+    ## Finance Programs ##
+
+    - name: Install GnuCash from default apt repositorys
+      apt:
+        name: gnucash
+
+    ## Web Programs ##
+
+    - name: Install Chromium from default apt repositorys
+      apt:
+        name: chromium-browser
+
+    - name: Install Transmission from default apt repositorys
+      apt:
+        name: transmission
+
+    - name: Install TIPP10 from default apt repositorys
+      apt:
+        name: tipp10
+
+
+# git config --global user.email "you@example.com"
+# git config --global user.name "Your Name"
 # common
 # user
 # deepnest
@@ -129,3 +178,15 @@
 # veracrypt
 # element
 # signal
+# zotero
+# typora
+# xournal++
+# ohmyzsh
+# discord
+# teams
+# zoom
+# cisco
+# parsec
+# among us
+# minecraft
+# table top simulator
