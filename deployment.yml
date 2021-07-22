@@ -59,6 +59,19 @@
       apt:
         name: printrun
 
+    - name: Install Scribus from default apt repositorys
+      apt:
+        name: scribus
+
+    - name: Install OpenShot from default apt repositorys
+      apt:
+        name: openshot
+
+    - name: Install Darktable from default apt repositorys
+      apt:
+        name: darktable
+
+
     ## Backup Programs ##
 
     - name: Install Syncthing from default apt repositorys
@@ -72,6 +85,7 @@
     - name: Install Nextcloud Desktop from default apt repositorys
       apt:
         name: nextcloud-desktop
+
 
     ## Writing Programs ##
 
@@ -94,6 +108,7 @@
       apt:
         name: calibre
 
+
     ## Coding Programs ##
 
     - name: Install Vagrant from default apt repositorys
@@ -112,6 +127,7 @@
           - adb
           - fastboot
 
+
     ## Media Programs ##
 
     - name: Install VLC media player from default apt repositorys
@@ -129,7 +145,7 @@
     - name: Install OBS Studio from default apt repositorys
       apt:
         name: obs-studio
-        
+
 
     ## Gaming Programs ##
 
@@ -152,17 +168,20 @@
       apt:
         name: discord
 
+
     ## Learning Programs ##
 
     - name: Install Anki from default apt repositorys
       apt:
         name: anki
 
+
     ## Finance Programs ##
 
     - name: Install GnuCash from default apt repositorys
       apt:
         name: gnucash
+
 
     ## Web Programs ##
 
