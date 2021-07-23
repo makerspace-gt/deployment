@@ -71,6 +71,14 @@
       apt:
         name: darktable
 
+    - name: Install Sweet Home 3D from default apt repositorys
+      apt:
+        name: sweethome3d
+
+    - name: Install GNU Octave from default apt repositorys
+      apt:
+        name: octave
+
 
     ## Backup Programs ##
 
@@ -85,6 +93,12 @@
     - name: Install Nextcloud Desktop from default apt repositorys
       apt:
         name: nextcloud-desktop
+
+    - name: Install rsync from default apt repositorys
+      apt:
+        name:
+          - rsync
+          - grsync
 
 
     ## Writing Programs ##
@@ -108,6 +122,14 @@
       apt:
         name: calibre
 
+    - name: Install AsciiDoc from default apt repositorys
+      apt:
+        name: asciidoc
+
+    - name: Install pdfgrep from default apt repositorys
+      apt:
+        name: pdfgrep
+
 
     ## Coding Programs ##
 
@@ -116,6 +138,10 @@
         name:
           - vagrant
           - virtualbox
+
+    - name: Install QEMU from default apt repositorys
+      apt:
+        name: qemu
 
     - name: Install Arduino IDE from default apt repositorys
       apt:
@@ -126,6 +152,24 @@
         name:
           - adb
           - fastboot
+
+    - name: Install git from default apt repositorys
+      apt:
+        name:
+          - git
+          - git-lfs
+
+    - name: Install Subversion from default apt repositorys
+      apt:
+        name:
+          - subversion
+          - git-svn
+
+    - name: Install Node.js from default apt repositorys
+      apt:
+        name:
+          - nodejs
+          - npm
 
 
     ## Media Programs ##
@@ -146,12 +190,28 @@
       apt:
         name: obs-studio
 
+    - name: Install Cheese from default apt repositorys
+      apt:
+        name: cheese
+
 
     ## Gaming Programs ##
 
     - name: Install Steam from default apt repositorys
       apt:
         name: steam
+
+    - name: Install SuperTuxKart from default apt repositorys
+      apt:
+        name: supertuxkart
+
+    - name: Install PlayOnLinux from default apt repositorys
+      apt:
+        name: playonlinux
+
+    - name: Install Lutris from default apt repositorys
+      apt:
+        name: lutris
 
 
     ## Communications Programs ##
@@ -197,6 +257,50 @@
       apt:
         name: tipp10
 
+    - name: Install Thunderbird from default apt repositorys
+      apt:
+        name: thunderbird
+
+    - name: Install Nmap from default apt repositorys
+      apt:
+        name: nmap
+
+    - name: Install Remmina from default apt repositorys
+      apt:
+        name: remmina
+
+
+    ## CLI Programs ##
+
+    - name: Install acpi from default apt repositorys
+      apt:
+        name: acpi
+
+    - name: Install ncdu from default apt repositorys
+      apt:
+        name: ncdu
+
+    - name: Install tlp from default apt repositorys
+      apt:
+        name: tlp
+
+    - name: Install tree from default apt repositorys
+      apt:
+        name: tree
+
+    - name: Install vim from default apt repositorys
+      apt:
+        name: vim
+
+    - name: Install powertop from default apt repositorys
+      apt:
+        name: powertop
+
+    - name: Install traceroute from default apt repositorys
+      apt:
+        name: traceroute
+
+
 
 # git config --global user.email "you@example.com"
 # git config --global user.name "Your Name"
@@ -217,36 +321,10 @@
 # among us
 # minecraft
 # table top simulator
-
-# acpi
-# asciidoc
-# thunderbird
-# git-lfs
-# grsync
 # inkstitch
 # linphone / sip client
-# ncdu
-# nmap
-# node
-# npm
-# octave
 # implicitcad
-# qemu
-# remmina
-# subversion
-# git-svn
-# supertuxkart
-# sweethome3d
-# teamviewer
-# tlp
-# tree
-# playonlinux
 # bitwarden
-# vim
+# teamviewer
 # unattended-upgraded / apt-listchanges
-# cheese
 # davinci resolve
-# lutris
-# pdfgrep
-# powertop
-# traceroute
