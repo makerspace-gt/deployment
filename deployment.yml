@@ -11,7 +11,10 @@
 
   roles:
     - role: ngetchell.vscode
+    - role: ngetchell.vscode
       vars:
+        become_user: "{{ user }}"
+        vscode_install: false
         vscode_extension:
           - platformio.platformio-ide
           - cweijan.vscode-office
