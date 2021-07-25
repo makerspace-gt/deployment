@@ -346,6 +346,9 @@
       apt:
         name: htop
 
+    - name: Install neofetch from default apt repositorys
+      apt:
+        name: neofetch
 
 # git config --global user.email "you@example.com"
 # git config --global user.name "Your Name"
