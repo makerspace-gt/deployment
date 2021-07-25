@@ -89,6 +89,10 @@
       apt:
         name: librecad
 
+    - name: Install LeoCAD from default apt repositorys
+      apt:
+        name: leocad
+
 
     ## Backup Programs ##
 
