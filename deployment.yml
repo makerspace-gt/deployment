@@ -159,7 +159,10 @@
 
     - name: Install QEMU from default apt repositorys
       apt:
-        name: qemu
+        name:
+          - qemu
+          - qemu-user-static
+          - binfmt-support
 
     - name: Install Arduino IDE from default apt repositorys
       apt:
