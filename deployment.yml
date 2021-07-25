@@ -93,6 +93,10 @@
       apt:
         name: leocad
 
+    - name: Install MeshLab from default apt repositorys
+      apt:
+        name: meshlab
+
 
     ## Backup Programs ##
 
