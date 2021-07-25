@@ -39,6 +39,7 @@
     - role: staticdev.signal
     - role: manala.zsh
     - role: manala.ohmyzsh
+    - role: etcher
 
   tasks:
 
@@ -348,7 +349,6 @@
 # common
 # user
 # deepnest
-# etcher
 # lightburn
 # veracrypt
 # element

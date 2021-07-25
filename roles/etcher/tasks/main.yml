@@ -1,0 +1,14 @@
+---
+- name: add key
+  apt_key:
+    url: https://dl.cloudsmith.io/public/balena/etcher/gpg.70528471AFF9A051.key
+
+- name: add repository
+  apt_repository:
+    repo: deb https://dl.cloudsmith.io/public/balena/etcher/deb/ubuntu hirsute main
+    filename: etcher
+
+- name: install
+  apt:
+    name:
+      - balena-etcher-electron
