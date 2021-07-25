@@ -357,6 +357,12 @@
         echo export MOZ_USE_XINPUT2=1 |
         sudo tee /etc/profile.d/e-xinput2.sh
 
+    - name: Set email for git
+      ansible.builtin.command: git config --global user.email "igami@mailbox.org"
+
+    - name: Set username for git
+      ansible.builtin.command: git config --global user.name "igami"
+
 # common
 # user
 # deepnest
