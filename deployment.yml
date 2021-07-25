@@ -12,6 +12,17 @@
         autoremove: yes
         autoclean: yes
 
+    # https://mutschler.eu/linux/install-guides/pop-os-post-install/
+
+    - name: Update Firmware
+      ansible.builtin.command: |
+        fwupdmgr get-devices -y &&
+        fwupdmgr get-updates &&
+        fwupdmgr update
+
+    - name: Set Hybrid Graphics
+      ansible.builtin.command: system76-power graphics hybrid
+
   roles:
     - role: ngetchell.vscode
     - role: ngetchell.vscode
@@ -215,6 +226,15 @@
       apt:
         name: cheese
 
+    - name: Install Multimedia Codecs from default apt repositorys
+      apt:
+        name:
+          - libavcodec-extra
+          - libdvd-pkg
+
+    - name: Configure Multimedia Codecs
+      ansible.builtin.debconf:
+        name: libdvd-pkg
 
     ## Gaming Programs ##
 
