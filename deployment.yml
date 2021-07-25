@@ -350,6 +350,10 @@
       apt:
         name: neofetch
 
+    - name: Install hw-probe from default apt repositorys
+      apt:
+        name: hw-probe
+
   #config Programs
 
     - name: Config firefox for nicer use of the touchscreen
