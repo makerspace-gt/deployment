@@ -3,11 +3,14 @@
 
   pre_tasks:
 
+    # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
     - name: Update && Dist-Upgrade the OS via apt
       apt:
-        upgrade: dist
         update_cache: yes
         cache_valid_time: 86400 # 1 day
+        upgrade: dist
+        autoremove: yes
+        autoclean: yes
 
   roles:
     - role: ngetchell.vscode
