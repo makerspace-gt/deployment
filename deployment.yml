@@ -85,6 +85,10 @@
       apt:
         name: octave
 
+    - name: Install LibreCAD from default apt repositorys
+      apt:
+        name: librecad
+
 
     ## Backup Programs ##
 
