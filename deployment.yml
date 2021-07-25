@@ -342,6 +342,9 @@
       apt:
         name: traceroute
 
+    - name: Install htop from default apt repositorys
+      apt:
+        name: htop
 
 
 # git config --global user.email "you@example.com"
