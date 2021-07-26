@@ -41,6 +41,7 @@
     - role: manala.ohmyzsh
     - role: etcher
     - role: tgagor.spotify
+    - role: ngetchell.ms_teams
 
   tasks:
 
@@ -384,7 +385,6 @@
 # zotero
 # typora
 # xournal++
-# teams
 # zoom
 # cisco
 # parsec
