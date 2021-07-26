@@ -367,6 +367,13 @@
     - name: Set username for git
       ansible.builtin.command: git config --global user.name "igami"
 
+    - name: configure Fingerprint sensor
+      apt:
+        name: libpam-fprintd
+
+    - name: Set username for git
+      ansible.builtin.command: pam-auth-update --enable fprintd
+
 # common
 # user
 # deepnest
