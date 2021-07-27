@@ -229,15 +229,6 @@
       apt:
         name: cheese
 
-    - name: Install Multimedia Codecs from default apt repositorys
-      apt:
-        name:
-          - libavcodec-extra
-          - libdvd-pkg
-
-    - name: Configure Multimedia Codecs
-      ansible.builtin.debconf:
-        name: libdvd-pkg
 
     ## Gaming Programs ##
 
