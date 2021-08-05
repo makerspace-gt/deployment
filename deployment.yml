@@ -223,7 +223,9 @@
 
     - name: Install OBS Studio from default apt repositorys
       apt:
-        name: obs-studio
+        name:
+          - obs-studio
+          - v4l2loopback-dkms
 
     - name: Install Cheese from default apt repositorys
       apt:
@@ -308,6 +310,10 @@
       apt:
         name: remmina
 
+    - name: Install network-manager-openconnect-gnome from default apt repositorys
+      apt:
+        name: network-manager-openconnect-gnome # Cisco AnyConnect
+
 
     ## CLI Programs ##
 
@@ -380,7 +386,6 @@
 # zotero
 # typora
 # xournal++
-# cisco
 # parsec
 # among us
 # minecraft
