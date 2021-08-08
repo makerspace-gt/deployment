@@ -387,6 +387,10 @@
     - name: enable Fingerprint sensor
       ansible.builtin.command: pam-auth-update --enable fprintd
 
+    - name: Install Tweaks from default apt repositorys
+      apt:
+        name: gnome-tweak-tool
+
 # common
 # user
 # deepnest
