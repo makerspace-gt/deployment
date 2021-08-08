@@ -357,6 +357,10 @@
       apt:
         name: hw-probe
 
+    - name: Install whois from default apt repositorys
+      apt:
+        name: whois
+
   #config Programs
 
     - name: Config firefox for nicer use of the touchscreen
