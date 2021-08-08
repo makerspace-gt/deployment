@@ -276,6 +276,12 @@
       apt:
         name: anki
 
+    - name: Install Pomodoro from default apt repositorys
+      apt:
+        name: gnome-shell-pomodoro
+      # needs shell extension for top bar
+      # https://extensions.gnome.org/extension/53/pomodoro/
+
 
     ## Finance Programs ##
 
