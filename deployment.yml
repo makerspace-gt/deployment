@@ -87,6 +87,10 @@
       apt:
         name: openshot
 
+    - name: Install Shotcut from default apt repositorys
+      apt:
+        name: shotcut
+
     - name: Install Darktable from default apt repositorys
       apt:
         name: darktable
