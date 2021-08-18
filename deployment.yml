@@ -215,7 +215,9 @@
 
     - name: Install VLC media player from default apt repositorys
       apt:
-        name: vlc
+        name: 
+          - vlc
+          - gstreamer1.0-libav
 
     - name: Install Audacity from default apt repositorys
       apt:
