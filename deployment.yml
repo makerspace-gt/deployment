@@ -115,6 +115,18 @@
       apt:
         name: meshlab
 
+    - name: Create LightBurn directory
+      ansible.builtin.file:
+        path: /opt/lightburn
+        state: directory
+        mode: '0777'
+    - name: Download LightBurn
+      get_url:
+        url: https://github.com/LightBurnSoftware/deployment/releases/download/1.0.02/LightBurn-Linux64-v1.0.02.run
+        dest: /opt/lightburn/LightBurn-Linux64.run
+        mode: '0777'
+    - name: Install LightBurn
+      ansible.builtin.command: /opt/lightburn/LightBurn-Linux64.run --nox11
 
     ## Backup Programs ##
 
@@ -403,10 +415,13 @@
       apt:
         name: gnome-tweak-tool
 
+# deepnest
+# inkstitch
+# davinci resolve
+# https://support.system76.com/articles/install-davinci-resolve
+
 # common
 # user
-# deepnest
-# lightburn
 # veracrypt
 # element
 # zotero
@@ -416,14 +431,11 @@
 # among us
 # minecraft
 # table top simulator
-# inkstitch
 # linphone / sip client
 # implicitcad
 # bitwarden
 # teamviewer
 # unattended-upgraded / apt-listchanges
-# davinci resolve
-# https://support.system76.com/articles/install-davinci-resolve
 # wireguard
 # https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 # https://extensions.gnome.org/extension/3396/color-picker/
