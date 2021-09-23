@@ -244,10 +244,6 @@
 
     ## Communications Programs ##
 
-    - name: Install Telegram Desktop from default apt repositorys
-      apt:
-        name: telegram-desktop
-
     - name: Install Slack Desktop from default apt repositorys
       apt:
         name: slack-desktop
