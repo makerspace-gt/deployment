@@ -344,13 +344,6 @@
 
   #config Programs
 
-    - name: prepare Fingerprint sensor
-      apt:
-        name: libpam-fprintd
-
-    - name: enable Fingerprint sensor
-      ansible.builtin.command: pam-auth-update --enable fprintd
-
     - name: Install Tweaks from default apt repositorys
       apt:
         name: gnome-tweak-tool
