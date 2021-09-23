@@ -33,8 +33,6 @@
           - yzhang.markdown-all-in-one
           - ms-vsliveshare.vsliveshare-pack
           - mhutchie.git-graph
-    - role: manala.zsh
-    - role: manala.ohmyzsh
     - role: etcher
     - role: tgagor.spotify
     - role: ngetchell.ms_teams
