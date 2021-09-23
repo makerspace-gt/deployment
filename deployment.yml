@@ -20,9 +20,6 @@
         fwupdmgr get-updates &&
         fwupdmgr update
 
-    - name: Set Hybrid Graphics
-      ansible.builtin.command: system76-power graphics hybrid
-
   roles:
     - role: ngetchell.vscode
     - role: ngetchell.vscode
