@@ -244,10 +244,6 @@
 
     ## Communications Programs ##
 
-    - name: Install Slack Desktop from default apt repositorys
-      apt:
-        name: slack-desktop
-
     - name: Install Discord from default apt repositorys
       apt:
         name: discord
