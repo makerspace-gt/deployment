@@ -344,18 +344,6 @@
 
   #config Programs
 
-    - name: Set email for git
-      community.general.git_config:
-        name: user.email
-        scope: global
-        value: igami@mailbox.org
-
-    - name: Set username for git
-      community.general.git_config:
-        name: user.name
-        scope: global
-        value: igami
-
     - name: prepare Fingerprint sensor
       apt:
         name: libpam-fprintd
