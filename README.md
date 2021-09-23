@@ -1,4 +1,4 @@
 # deployment
 
 Installation:  
-`curl -sSL https://raw.githubusercontent.com/Igami/deployment/main/deployment.sh | bash`
+`curl -sSL https://raw.githubusercontent.com/makerspace-gt/deployment/main/deployment.sh | bash`
