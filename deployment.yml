@@ -287,10 +287,6 @@
       apt:
         name: tipp10
 
-    - name: Install Thunderbird from default apt repositorys
-      apt:
-        name: thunderbird
-
     - name: Install Nmap from default apt repositorys
       apt:
         name: nmap
