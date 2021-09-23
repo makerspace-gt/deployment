@@ -21,18 +21,18 @@
         fwupdmgr update
 
   roles:
-    - role: ngetchell.vscode
-    - role: ngetchell.vscode
-      vars:
-        become_user: "{{ user }}"
-        vscode_install: false
-        vscode_extension:
-          - platformio.platformio-ide
-          - cweijan.vscode-office
-          - robole.marky-stats
-          - yzhang.markdown-all-in-one
-          - ms-vsliveshare.vsliveshare-pack
-          - mhutchie.git-graph
+    # - role: ngetchell.vscode
+    # - role: ngetchell.vscode
+    #   vars:
+    #     become_user: "{{ user }}"
+    #     vscode_install: false
+    #     vscode_extension:
+    #       - platformio.platformio-ide
+    #       - cweijan.vscode-office
+    #       - robole.marky-stats
+    #       - yzhang.markdown-all-in-one
+    #       - ms-vsliveshare.vsliveshare-pack
+    #       - mhutchie.git-graph
     - role: etcher
 
   tasks:
