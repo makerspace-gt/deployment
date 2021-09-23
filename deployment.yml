@@ -242,25 +242,6 @@
         name: cheese
 
 
-    ## Gaming Programs ##
-
-    - name: Install Steam from default apt repositorys
-      apt:
-        name: steam
-
-    - name: Install SuperTuxKart from default apt repositorys
-      apt:
-        name: supertuxkart
-
-    - name: Install PlayOnLinux from default apt repositorys
-      apt:
-        name: playonlinux
-
-    - name: Install Lutris from default apt repositorys
-      apt:
-        name: lutris
-
-
     ## Communications Programs ##
 
     - name: Install Telegram Desktop from default apt repositorys
