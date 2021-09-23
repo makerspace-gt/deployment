@@ -5,7 +5,7 @@ sudo apt -y install ansible git
 
 # clone repository
 rm -rf /tmp/deployment
-git clone https://github.com/Igami/deployment.git /tmp/deployment
+git clone https://github.com/makerspace-gt/deployment.git /tmp/deployment
 cd /tmp/deployment
 
 # deploy via ansbile
