@@ -295,10 +295,6 @@
       apt:
         name: remmina
 
-    - name: Install network-manager-openconnect-gnome from default apt repositorys
-      apt:
-        name: network-manager-openconnect-gnome # Cisco AnyConnect
-
 
     ## CLI Programs ##
 
