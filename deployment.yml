@@ -34,7 +34,6 @@
           - ms-vsliveshare.vsliveshare-pack
           - mhutchie.git-graph
     - role: etcher
-    - role: tgagor.spotify
     - role: ngetchell.ms_teams
 
   tasks:
