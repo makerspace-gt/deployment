@@ -2,6 +2,7 @@
   become: yes
 
   # manually done
+
   # Settings
   #   Desktop/Dock
   #     [ ] Dock bis zu den Bildschirmrändern ausbreiten
@@ -20,6 +21,10 @@
   #         Zeitformat: 24-Stunden
   #   Info
   #         Gerätename: ...
+
+  # nextcloud client
+  #   user: makerspace-gt
+  #   sync /home/maker/Öffentlich
 
   pre_tasks:
 
