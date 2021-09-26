@@ -1,6 +1,26 @@
 - hosts: localhost
   become: yes
 
+  # manually done
+  # Settings
+  #   Desktop/Dock
+  #     [ ] Dock bis zu den Bildschirmrändern ausbreiten
+  #     [x] Intelligentes Ausblenden
+  #         Dock anzeigen: Alle Anzeigegeräte
+  #     [x] Linker Bereich des Bildschirms
+  #   Energie
+  #     [ ] Bildschirm bei Inaktivität abdunkeln
+  #         Bildschirm abschalten: Nie
+  #     [x] Prozentsatz der Akkuladung anzeigen
+  #   Maus udn Tastenfeld
+  #     [x] Natürlicher Bildlauf
+  #   Benutzer
+  #     [x] Automatische Anmeldung
+  #   Datum und Zeit
+  #         Zeitformat: 24-Stunden
+  #   Info
+  #         Gerätename: ...
+
   pre_tasks:
 
     # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
