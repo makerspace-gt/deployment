@@ -46,7 +46,7 @@
         fwupdmgr update
 
   roles:
-    # - role: ngetchell.vscode
+    - role: ngetchell.vscode
     # - role: ngetchell.vscode
     #   vars:
     #     become_user: "{{ user }}"
