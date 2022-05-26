@@ -3,6 +3,16 @@
 - hosts: localhost
   become: yes
 
+  pre_tasks:
+
+  - name: Prozentsatz der Akkuladung anzeigen
+    community.general.dconf:
+      key: "/org/gnome/desktop/interface/show-battery-percentage"
+      value: "true"
+      state: present
+
+
+
   # manually done
 
   # Settings
@@ -28,7 +38,6 @@
   #   user: makerspace-gt
   #   sync /home/maker/Öffentlich
 
-#   pre_tasks:
 
 #     # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
 #     - name: Update && Dist-Upgrade the OS via apt
