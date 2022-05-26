@@ -1,0 +1,434 @@
+#!/usr/bin/env ansible-playbook
+
+- hosts: all
+  become: yes
+
+  # manually done
+
+  # Settings
+  #   Desktop/Dock
+  #     [ ] Dock bis zu den Bildschirmrändern ausbreiten
+  #     [x] Intelligentes Ausblenden
+  #         Dock anzeigen: Alle Anzeigegeräte
+  #     [x] Linker Bereich des Bildschirms
+  #   Energie
+  #     [ ] Bildschirm bei Inaktivität abdunkeln
+  #         Bildschirm abschalten: Nie
+  #     [x] Prozentsatz der Akkuladung anzeigen
+  #   Maus udn Tastenfeld
+  #     [x] Natürlicher Bildlauf
+  #   Benutzer
+  #     [x] Automatische Anmeldung
+  #   Datum und Zeit
+  #         Zeitformat: 24-Stunden
+  #   Info
+  #         Gerätename: ...
+
+  # nextcloud client
+  #   user: makerspace-gt
+  #   sync /home/maker/Öffentlich
+
+#   pre_tasks:
+
+#     # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+#     - name: Update && Dist-Upgrade the OS via apt
+#       apt:
+#         update_cache: yes
+#         cache_valid_time: 86400 # 1 day
+#         upgrade: dist
+#         autoremove: yes
+#         autoclean: yes
+
+#     # https://mutschler.eu/linux/install-guides/pop-os-post-install/
+
+#     - name: Update Firmware
+#       ansible.builtin.command: |
+#         fwupdmgr get-devices -y &&
+#         fwupdmgr get-updates &&
+#         fwupdmgr update
+
+#   roles:
+#     # - role: ngetchell.vscode
+#     # - role: ngetchell.vscode
+#     #   vars:
+#     #     become_user: "{{ user }}"
+#     #     vscode_install: false
+#     #     vscode_extension:
+#     #       - platformio.platformio-ide
+#     #       - cweijan.vscode-office
+#     #       - robole.marky-stats
+#     #       - yzhang.markdown-all-in-one
+#     #       - ms-vsliveshare.vsliveshare-pack
+#     #       - mhutchie.git-graph
+#     - role: etcher
+
+  tasks:
+
+    - name: Install flatpak
+      ansible.builtin.package:
+        name: flatpak
+        state: present
+
+    - name: Add the flathub flatpak repository remote
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    ## Roles ##
+
+    - name: Install VSCodium from flathub
+      community.general.flatpak:
+        name: com.vscodium.codium
+        state: present
+
+
+    ## CAD/CAM Programs ##
+
+    - name: Install Prusa Slicer from flathub
+      community.general.flatpak:
+        name: com.prusa3d.PrusaSlicer
+        state: present
+
+    - name: Install FreeCAD from flathub
+      community.general.flatpak:
+        name: org.freecadweb.FreeCAD
+        state: present
+
+    - name: Install Blender from flathub
+      community.general.flatpak:
+        name: org.blender.Blender
+        state: present
+
+    - name: Install OpenSCAD from flathub
+      community.general.flatpak:
+        name: org.openscad.OpenSCAD
+        state: present
+
+    - name: Install GIMP from flathub
+      community.general.flatpak:
+        name: org.gimp.GIMP
+        state: present
+
+    - name: Install Inkscape from flathub
+      community.general.flatpak:
+        name: org.inkscape.Inkscape
+        state: present
+
+    - name: Install KiCad from flathub
+      community.general.flatpak:
+        name: org.kicad.KiCad
+        state: present
+
+#     - name: Install Printrun from default apt repositorys
+#       apt:
+#         name: printrun
+
+    - name: Install Scribus from flathub
+      community.general.flatpak:
+        name: net.scribus.Scribus
+        state: present
+
+    - name: Install Shotcut from flathub
+      community.general.flatpak:
+        name: org.shotcut.Shotcut
+        state: present
+
+#     - name: Install Darktable from default apt repositorys
+#       apt:
+#         name: darktable
+
+    - name: Install Sweet Home 3D from flathub
+      community.general.flatpak:
+        name: com.sweethome3d.Sweethome3d
+        state: present
+
+    - name: Install GNU Octave from flathub
+      community.general.flatpak:
+        name: org.octave.Octave
+        state: present
+
+#     - name: Install LibreCAD from default apt repositorys
+#       apt:
+#         name: librecad
+
+    - name: Install LeoCAD from flathub
+      community.general.flatpak:
+        name: org.leocad.LeoCAD
+        state: present
+
+    - name: Install MeshLab from flathub
+      community.general.flatpak:
+        name: net.meshlab.MeshLab
+        state: present
+
+    - name: Create LightBurn directory
+      ansible.builtin.file:
+        path: /opt/lightburn
+        state: directory
+        mode: '0777'
+    - name: Download LightBurn
+      get_url:
+        url: https://github.com/LightBurnSoftware/deployment/releases/download/1.1.04/LightBurn-Linux64-v1.1.04.run
+        dest: /opt/lightburn/LightBurn-Linux64.run
+        mode: '0777'
+    - name: Install LightBurn
+      ansible.builtin.command: /opt/lightburn/LightBurn-Linux64.run --nox11
+
+#     ## Backup Programs ##
+
+    # - name: Install  from flathub
+    #   community.general.flatpak:
+    #     name: 
+    #     state: present
+
+#     - name: Install Syncthing from default apt repositorys
+#       apt:
+#         name: syncthing
+
+#     - name: Install KeePassXC from default apt repositorys
+#       apt:
+#         name: keepassxc
+
+#     - name: Install Nextcloud Desktop from default apt repositorys
+#       apt:
+#         name: nextcloud-desktop
+
+#     - name: Install rsync from default apt repositorys
+#       apt:
+#         name:
+#           - rsync
+#           - grsync
+
+
+#     ## Writing Programs ##
+
+#     - name: Install Pandoc from default apt repositorys
+#       apt:
+#         name:
+#           - pandoc
+#           - pandoc-citeproc
+
+#     - name: Install TeX Live from default apt repositorys
+#       apt:
+#         name:
+#           - texlive
+#           - texlive-lang-german
+#           - texlive-latex-extra
+#           - texlive-fonts-extra
+#           - texlive-luatex
+
+#     - name: Install Calibre from default apt repositorys
+#       apt:
+#         name: calibre
+
+#     - name: Install AsciiDoc from default apt repositorys
+#       apt:
+#         name: asciidoc
+
+#     - name: Install pdfgrep from default apt repositorys
+#       apt:
+#         name: pdfgrep
+
+
+#     ## Coding Programs ##
+
+#     - name: Install Vagrant from default apt repositorys
+#       apt:
+#         name:
+#           - vagrant
+#           - virtualbox
+
+#     - name: Install QEMU from default apt repositorys
+#       apt:
+#         name:
+#           - qemu
+#           - qemu-user-static
+#           - binfmt-support
+
+#     - name: Install Arduino IDE from default apt repositorys
+#       apt:
+#         name: arduino
+
+#     - name: Install Android Tools from default apt repositorys
+#       apt:
+#         name:
+#           - adb
+#           - fastboot
+
+#     - name: Install git from default apt repositorys
+#       apt:
+#         name:
+#           - git
+#           - git-lfs
+
+#     - name: Install Subversion from default apt repositorys
+#       apt:
+#         name:
+#           - subversion
+#           - git-svn
+
+#     - name: Install Node.js from default apt repositorys
+#       apt:
+#         name:
+#           - nodejs
+#           - npm
+
+
+#     ## Media Programs ##
+
+#     - name: Install VLC media player from default apt repositorys
+#       apt:
+#         name:
+#           - vlc
+#           - gstreamer1.0-libav
+
+#     - name: Install Audacity from default apt repositorys
+#       apt:
+#         name: audacity
+
+#     - name: Install Ardour from default apt repositorys
+#       apt:
+#         name: ardour
+
+#     - name: Install OBS Studio from default apt repositorys
+#       apt:
+#         name:
+#           - obs-studio
+#           - v4l2loopback-dkms
+
+#     - name: Install Cheese from default apt repositorys
+#       apt:
+#         name: cheese
+
+
+#     ## Communications Programs ##
+
+#     - name: Install Discord from default apt repositorys
+#       apt:
+#         name: discord
+
+#     - name: install zoom
+#       apt:
+#         deb: https://zoom.us/client/latest/zoom_amd64.deb
+
+
+#     ## Learning Programs ##
+
+#     - name: Install Anki from default apt repositorys
+#       apt:
+#         name: anki
+
+#     - name: Install Pomodoro from default apt repositorys
+#       apt:
+#         name: gnome-shell-pomodoro
+#       # needs shell extension for top bar
+#       # https://extensions.gnome.org/extension/53/pomodoro/
+
+
+#     ## Finance Programs ##
+
+#     - name: Install GnuCash from default apt repositorys
+#       apt:
+#         name: gnucash
+
+
+#     ## Web Programs ##
+
+#     - name: Install Chromium from default apt repositorys
+#       apt:
+#         name: chromium-browser
+
+#     - name: Install Transmission from default apt repositorys
+#       apt:
+#         name: transmission
+
+#     - name: Install TIPP10 from default apt repositorys
+#       apt:
+#         name: tipp10
+
+#     - name: Install Nmap from default apt repositorys
+#       apt:
+#         name: nmap
+
+#     - name: Install Remmina from default apt repositorys
+#       apt:
+#         name: remmina
+
+
+#     ## CLI Programs ##
+
+#     - name: Install acpi from default apt repositorys
+#       apt:
+#         name: acpi
+
+#     - name: Install ncdu from default apt repositorys
+#       apt:
+#         name: ncdu
+
+#     - name: Install tlp from default apt repositorys
+#       apt:
+#         name: tlp
+
+#     - name: Install tree from default apt repositorys
+#       apt:
+#         name: tree
+
+#     - name: Install vim from default apt repositorys
+#       apt:
+#         name: vim
+
+#     - name: Install powertop from default apt repositorys
+#       apt:
+#         name: powertop
+
+#     - name: Install traceroute from default apt repositorys
+#       apt:
+#         name: traceroute
+
+#     - name: Install htop from default apt repositorys
+#       apt:
+#         name: htop
+
+#     - name: Install neofetch from default apt repositorys
+#       apt:
+#         name: neofetch
+
+#     - name: Install hw-probe from default apt repositorys
+#       apt:
+#         name: hw-probe
+
+#     - name: Install whois from default apt repositorys
+#       apt:
+#         name: whois
+
+#   #config Programs
+
+#     - name: Install Tweaks from default apt repositorys
+#       apt:
+#         name: gnome-tweak-tool
+
+# # deepnest
+# # inkstitch
+# # davinci resolve
+# # https://support.system76.com/articles/install-davinci-resolve
+
+# # common
+# # user
+# # veracrypt
+# # element
+# # zotero
+# # typora
+# # xournal++
+# # parsec
+# # among us
+# # minecraft
+# # table top simulator
+# # linphone / sip client
+# # implicitcad
+# # bitwarden
+# # teamviewer
+# # unattended-upgraded / apt-listchanges
+# # wireguard
+# # https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+# # https://extensions.gnome.org/extension/3396/color-picker/
