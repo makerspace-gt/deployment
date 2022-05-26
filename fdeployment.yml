@@ -32,7 +32,7 @@
 
 #     # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
 #     - name: Update && Dist-Upgrade the OS via apt
-#       apt:
+#       ansible.builtin.package:
 #         update_cache: yes
 #         cache_valid_time: 86400 # 1 day
 #         upgrade: dist
@@ -120,8 +120,8 @@
         name: org.kicad.KiCad
         state: present
 
-#     - name: Install Printrun from default apt repositorys
-#       apt:
+#     - name: Install Printrun via generic OS package manager
+#       ansible.builtin.package:
 #         name: printrun
 
     - name: Install Scribus from flathub
@@ -134,8 +134,8 @@
         name: org.shotcut.Shotcut
         state: present
 
-#     - name: Install Darktable from default apt repositorys
-#       apt:
+#     - name: Install Darktable via generic OS package manager
+#       ansible.builtin.package:
 #         name: darktable
 
     - name: Install Sweet Home 3D from flathub
@@ -148,8 +148,8 @@
         name: org.octave.Octave
         state: present
 
-#     - name: Install LibreCAD from default apt repositorys
-#       apt:
+#     - name: Install LibreCAD via generic OS package manager
+#       ansible.builtin.package:
 #         name: librecad
 
     - name: Install LeoCAD from flathub
@@ -182,94 +182,96 @@
     #     name: 
     #     state: present
 
-#     - name: Install Syncthing from default apt repositorys
-#       apt:
+#     - name: Install Syncthing via generic OS package manager
+#       ansible.builtin.package:
 #         name: syncthing
 
-#     - name: Install KeePassXC from default apt repositorys
-#       apt:
+#     - name: Install KeePassXC via generic OS package manager
+#       ansible.builtin.package:
 #         name: keepassxc
 
-#     - name: Install Nextcloud Desktop from default apt repositorys
-#       apt:
+#     - name: Install Nextcloud Desktop via generic OS package manager
+#       ansible.builtin.package:
 #         name: nextcloud-desktop
 
-#     - name: Install rsync from default apt repositorys
-#       apt:
-#         name:
-#           - rsync
-#           - grsync
-
+    - name: Install rsync via generic OS package manager
+      ansible.builtin.package:
+        name:
+          - rsync
+          - grsync
+        state: present
 
 #     ## Writing Programs ##
 
-#     - name: Install Pandoc from default apt repositorys
-#       apt:
-#         name:
-#           - pandoc
-#           - pandoc-citeproc
+    - name: Install Pandoc via generic OS package manager
+      ansible.builtin.package:
+        name:
+          - pandoc
+          # - pandoc-citeproc
+        state: present
 
-#     - name: Install TeX Live from default apt repositorys
-#       apt:
-#         name:
-#           - texlive
-#           - texlive-lang-german
-#           - texlive-latex-extra
-#           - texlive-fonts-extra
-#           - texlive-luatex
+    - name: Install TeX Live via generic OS package manager
+      ansible.builtin.package:
+        name:
+          - texlive
+          # - texlive-lang-german
+          # - texlive-latex-extra
+          # - texlive-fonts-extra
+          # - texlive-luatex
+        state: present
 
-#     - name: Install Calibre from default apt repositorys
-#       apt:
-#         name: calibre
+    - name: Install Calibre via generic OS package manager
+      ansible.builtin.package:
+        name: calibre
 
-#     - name: Install AsciiDoc from default apt repositorys
-#       apt:
-#         name: asciidoc
+    - name: Install AsciiDoc via generic OS package manager
+      ansible.builtin.package:
+        name: asciidoc
 
-#     - name: Install pdfgrep from default apt repositorys
-#       apt:
-#         name: pdfgrep
+    - name: Install pdfgrep via generic OS package manager
+      ansible.builtin.package:
+        name: pdfgrep
 
 
 #     ## Coding Programs ##
 
-#     - name: Install Vagrant from default apt repositorys
-#       apt:
-#         name:
-#           - vagrant
-#           - virtualbox
+    # - name: Install Vagrant via generic OS package manager
+    #   ansible.builtin.package:
+    #     name:
+    #       - vagrant
+    #       - virtualbox
 
-#     - name: Install QEMU from default apt repositorys
-#       apt:
-#         name:
-#           - qemu
-#           - qemu-user-static
-#           - binfmt-support
+    # - name: Install QEMU via generic OS package manager
+    #   ansible.builtin.package:
+    #     name:
+    #       - qemu
+    #       - qemu-user-static
+    #       - binfmt-support
 
-#     - name: Install Arduino IDE from default apt repositorys
-#       apt:
+#     - name: Install Arduino IDE via generic OS package manager
+#       ansible.builtin.package:
 #         name: arduino
 
-#     - name: Install Android Tools from default apt repositorys
-#       apt:
-#         name:
-#           - adb
-#           - fastboot
+    - name: Install Android Tools via generic OS package manager
+      ansible.builtin.package:
+        name:
+          - adb
+          - fastboot
 
-#     - name: Install git from default apt repositorys
-#       apt:
-#         name:
-#           - git
-#           - git-lfs
+    - name: Install git via generic OS package manager
+      ansible.builtin.package:
+        name:
+          - git
+          - git-lfs
 
-#     - name: Install Subversion from default apt repositorys
-#       apt:
-#         name:
-#           - subversion
-#           - git-svn
+    - name: Install Subversion via generic OS package manager
+      ansible.builtin.package:
+        name:
+          - subversion
+          - git-svn
 
-#     - name: Install Node.js from default apt repositorys
-#       apt:
+#     - name: Install Node.js via generic OS package manager
+#       ansible.builtin.package:
 #         name:
 #           - nodejs
 #           - npm
@@ -277,50 +279,50 @@
 
 #     ## Media Programs ##
 
-#     - name: Install VLC media player from default apt repositorys
-#       apt:
+#     - name: Install VLC media player via generic OS package manager
+#       ansible.builtin.package:
 #         name:
 #           - vlc
 #           - gstreamer1.0-libav
 
-#     - name: Install Audacity from default apt repositorys
-#       apt:
+#     - name: Install Audacity via generic OS package manager
+#       ansible.builtin.package:
 #         name: audacity
 
-#     - name: Install Ardour from default apt repositorys
-#       apt:
+#     - name: Install Ardour via generic OS package manager
+#       ansible.builtin.package:
 #         name: ardour
 
-#     - name: Install OBS Studio from default apt repositorys
-#       apt:
+#     - name: Install OBS Studio via generic OS package manager
+#       ansible.builtin.package:
 #         name:
 #           - obs-studio
 #           - v4l2loopback-dkms
 
-#     - name: Install Cheese from default apt repositorys
-#       apt:
+#     - name: Install Cheese via generic OS package manager
+#       ansible.builtin.package:
 #         name: cheese
 
 
 #     ## Communications Programs ##
 
-#     - name: Install Discord from default apt repositorys
-#       apt:
+#     - name: Install Discord via generic OS package manager
+#       ansible.builtin.package:
 #         name: discord
 
 #     - name: install zoom
-#       apt:
+#       ansible.builtin.package:
 #         deb: https://zoom.us/client/latest/zoom_amd64.deb
 
 
 #     ## Learning Programs ##
 
-#     - name: Install Anki from default apt repositorys
-#       apt:
+#     - name: Install Anki via generic OS package manager
+#       ansible.builtin.package:
 #         name: anki
 
-#     - name: Install Pomodoro from default apt repositorys
-#       apt:
+#     - name: Install Pomodoro via generic OS package manager
+#       ansible.builtin.package:
 #         name: gnome-shell-pomodoro
 #       # needs shell extension for top bar
 #       # https://extensions.gnome.org/extension/53/pomodoro/
@@ -328,84 +330,84 @@
 
 #     ## Finance Programs ##
 
-#     - name: Install GnuCash from default apt repositorys
-#       apt:
+#     - name: Install GnuCash via generic OS package manager
+#       ansible.builtin.package:
 #         name: gnucash
 
 
 #     ## Web Programs ##
 
-#     - name: Install Chromium from default apt repositorys
-#       apt:
+#     - name: Install Chromium via generic OS package manager
+#       ansible.builtin.package:
 #         name: chromium-browser
 
-#     - name: Install Transmission from default apt repositorys
-#       apt:
+#     - name: Install Transmission via generic OS package manager
+#       ansible.builtin.package:
 #         name: transmission
 
-#     - name: Install TIPP10 from default apt repositorys
-#       apt:
+#     - name: Install TIPP10 via generic OS package manager
+#       ansible.builtin.package:
 #         name: tipp10
 
-#     - name: Install Nmap from default apt repositorys
-#       apt:
+#     - name: Install Nmap via generic OS package manager
+#       ansible.builtin.package:
 #         name: nmap
 
-#     - name: Install Remmina from default apt repositorys
-#       apt:
+#     - name: Install Remmina via generic OS package manager
+#       ansible.builtin.package:
 #         name: remmina
 
 
 #     ## CLI Programs ##
 
-#     - name: Install acpi from default apt repositorys
-#       apt:
-#         name: acpi
+    - name: Install acpi via generic OS package manager
+      ansible.builtin.package:
+        name: acpi
 
-#     - name: Install ncdu from default apt repositorys
-#       apt:
-#         name: ncdu
+    - name: Install ncdu via generic OS package manager
+      ansible.builtin.package:
+        name: ncdu
 
-#     - name: Install tlp from default apt repositorys
-#       apt:
-#         name: tlp
+    - name: Install tlp via generic OS package manager
+      ansible.builtin.package:
+        name: tlp
 
-#     - name: Install tree from default apt repositorys
-#       apt:
-#         name: tree
+    - name: Install tree via generic OS package manager
+      ansible.builtin.package:
+        name: tree
 
-#     - name: Install vim from default apt repositorys
-#       apt:
-#         name: vim
+    - name: Install vim via generic OS package manager
+      ansible.builtin.package:
+        name: vim
 
-#     - name: Install powertop from default apt repositorys
-#       apt:
-#         name: powertop
+    - name: Install powertop via generic OS package manager
+      ansible.builtin.package:
+        name: powertop
 
-#     - name: Install traceroute from default apt repositorys
-#       apt:
-#         name: traceroute
+    - name: Install traceroute via generic OS package manager
+      ansible.builtin.package:
+        name: traceroute
 
-#     - name: Install htop from default apt repositorys
-#       apt:
-#         name: htop
+    - name: Install htop via generic OS package manager
+      ansible.builtin.package:
+        name: htop
 
-#     - name: Install neofetch from default apt repositorys
-#       apt:
-#         name: neofetch
+    - name: Install neofetch via generic OS package manager
+      ansible.builtin.package:
+        name: neofetch
 
-#     - name: Install hw-probe from default apt repositorys
-#       apt:
-#         name: hw-probe
+    # - name: Install hw-probe via generic OS package manager
+    #   ansible.builtin.package:
+    #     name: hw-probe
 
-#     - name: Install whois from default apt repositorys
-#       apt:
-#         name: whois
+    - name: Install whois via generic OS package manager
+      ansible.builtin.package:
+        name: whois
 
 #   #config Programs
 
-#     - name: Install Tweaks from default apt repositorys
-#       apt:
+#     - name: Install Tweaks via generic OS package manager
+#       ansible.builtin.package:
 #         name: gnome-tweak-tool
 
 # # deepnest
