@@ -369,9 +369,9 @@
 
   #config Programs
 
-    - name: Install Tweaks from default apt repositorys
-      apt:
-        name: gnome-tweak-tool
+   # - name: Install Tweaks from default apt repositorys
+   #   apt:
+   #     name: gnome-tweak-tool
 
 # deepnest
 # inkstitch
