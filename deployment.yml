@@ -39,11 +39,11 @@
 
     # https://mutschler.eu/linux/install-guides/pop-os-post-install/
 
-    - name: Update Firmware
-      ansible.builtin.command: |
-        fwupdmgr get-devices -y &&
-        fwupdmgr get-updates &&
-        fwupdmgr update
+    #- name: Update Firmware
+    #  ansible.builtin.command: |
+    #    fwupdmgr get-devices -y &&
+    #    fwupdmgr get-updates &&
+    #    fwupdmgr update
 
   roles:
     - role: ngetchell.vscode
@@ -92,17 +92,17 @@
       apt:
         name: kicad
 
-    - name: Install Printrun from default apt repositorys
-      apt:
-        name: printrun
+   # - name: Install Printrun from default apt repositorys
+   #   apt:
+   #     name: printrun
 
     - name: Install Scribus from default apt repositorys
       apt:
         name: scribus
 
-    - name: Install OpenShot from default apt repositorys
-      apt:
-        name: openshot
+   # - name: Install OpenShot from default apt repositorys
+   #   apt:
+   #     name: openshot
 
     - name: Install Shotcut from default apt repositorys
       apt:
@@ -139,7 +139,7 @@
         mode: '0777'
     - name: Download LightBurn
       get_url:
-        url: https://github.com/LightBurnSoftware/deployment/releases/download/1.0.02/LightBurn-Linux64-v1.0.02.run
+        url: https://github.com/LightBurnSoftware/deployment/releases/download/1.2.00/LightBurn-Linux64-v1.2.00.run
         dest: /opt/lightburn/LightBurn-Linux64.run
         mode: '0777'
     - name: Install LightBurn
@@ -151,9 +151,9 @@
       apt:
         name: syncthing
 
-    - name: Install KeePassXC from default apt repositorys
-      apt:
-        name: keepassxc
+   # - name: Install KeePassXC from default apt repositorys
+   #   apt:
+   #     name: keepassxc
 
     - name: Install Nextcloud Desktop from default apt repositorys
       apt:
@@ -174,22 +174,22 @@
           - pandoc
           - pandoc-citeproc
 
-    - name: Install TeX Live from default apt repositorys
-      apt:
-        name:
-          - texlive
-          - texlive-lang-german
-          - texlive-latex-extra
-          - texlive-fonts-extra
-          - texlive-luatex
+   # - name: Install TeX Live from default apt repositorys
+   #   apt:
+   #     name:
+   #       - texlive
+   #       - texlive-lang-german
+   #       - texlive-latex-extra
+   #       - texlive-fonts-extra
+   #       - texlive-luatex
 
-    - name: Install Calibre from default apt repositorys
-      apt:
-        name: calibre
+   # - name: Install Calibre from default apt repositorys
+   #   apt:
+   #     name: calibre
 
-    - name: Install AsciiDoc from default apt repositorys
-      apt:
-        name: asciidoc
+   # - name: Install AsciiDoc from default apt repositorys
+   #   apt:
+   #     name: asciidoc
 
     - name: Install pdfgrep from default apt repositorys
       apt:
@@ -204,12 +204,12 @@
           - vagrant
           - virtualbox
 
-    - name: Install QEMU from default apt repositorys
-      apt:
-        name:
-          - qemu
-          - qemu-user-static
-          - binfmt-support
+    #- name: Install QEMU from default apt repositorys
+    #  apt:
+    #    name:
+    #      - qemu
+    #      - qemu-user-static
+    #      - binfmt-support
 
     - name: Install Arduino IDE from default apt repositorys
       apt:
@@ -227,17 +227,17 @@
           - git
           - git-lfs
 
-    - name: Install Subversion from default apt repositorys
-      apt:
-        name:
-          - subversion
-          - git-svn
+    #- name: Install Subversion from default apt repositorys
+    #  apt:
+    #    name:
+    #      - subversion
+    #      - git-svn
 
-    - name: Install Node.js from default apt repositorys
-      apt:
-        name:
-          - nodejs
-          - npm
+    #- name: Install Node.js from default apt repositorys
+    #  apt:
+    #    name:
+    #      - nodejs
+    #      - npm
 
 
     ## Media Programs ##
@@ -252,9 +252,9 @@
       apt:
         name: audacity
 
-    - name: Install Ardour from default apt repositorys
-      apt:
-        name: ardour
+    #- name: Install Ardour from default apt repositorys
+    #  apt:
+    #    name: ardour
 
     - name: Install OBS Studio from default apt repositorys
       apt:
@@ -269,9 +269,9 @@
 
     ## Communications Programs ##
 
-    - name: Install Discord from default apt repositorys
-      apt:
-        name: discord
+    #- name: Install Discord from default apt repositorys
+    #  apt:
+    #    name: discord
 
     - name: install zoom
       apt:
@@ -284,18 +284,18 @@
       apt:
         name: anki
 
-    - name: Install Pomodoro from default apt repositorys
-      apt:
-        name: gnome-shell-pomodoro
+    #- name: Install Pomodoro from default apt repositorys
+    #  apt:
+    #    name: gnome-shell-pomodoro
       # needs shell extension for top bar
       # https://extensions.gnome.org/extension/53/pomodoro/
 
 
     ## Finance Programs ##
 
-    - name: Install GnuCash from default apt repositorys
-      apt:
-        name: gnucash
+    #- name: Install GnuCash from default apt repositorys
+    #  apt:
+    #    name: gnucash
 
 
     ## Web Programs ##
