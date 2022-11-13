@@ -145,6 +145,10 @@
     - name: Install LightBurn
       ansible.builtin.command: /opt/lightburn/LightBurn-Linux64.run --nox11
 
+    - name: Install 3Dconnexion Daemon from default apt repositorys
+      apt:
+        name: spacenavd      
+
     ## Backup Programs ##
 
     - name: Install Syncthing from default apt repositorys
